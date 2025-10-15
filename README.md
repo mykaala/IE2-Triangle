@@ -2,7 +2,7 @@
 Template code for the In-Class Exercise 2 on Unit Testing, an exercise that focuses on unit testing and
 test effectiveness, using code coverage and mutation analysis.
 
-NOTE) In the following, we will be using the python 3 commands. You may instead need to use the python commands.
+NOTE: In the following, we will be using the python 3 commands.
 
 # Installation
 We advise you to create a virtual enviroment (python venv, conda) to install the packages.
@@ -16,35 +16,51 @@ Preferred version of python - **python3.8**.
    ```
 3. Test the initial test suite by running the script: ```test.sh```
 
-For more information on ```Pytest```, you can take a look at the homepage https://pypi.org/project/pytest/. 
-
-Here are more details about ```unittest```: https://docs.python.org/3/library/unittest.html.
 
 
 # Control Flow Graph
 
 ![Control Flow Graph](isTriangle_cfg_numbered.png)
 
-Control flow graph (CFG) helps to assess normative and exception cases from the execution flow. You are given the CFG of the file ```isTriangle.py```. One example normative case is identified for you in the provided image: ```scalene_triangle```.  For a scalene triangle, the execution flow starts at the "classify" function, evaluates the invalid and equality conditions, and then reaches the trian == 0 condition, where the triangle is classified as scalene.
+The **Control Flow Graph (CFG)** of `isTriangle.py` shows all potential execution paths.
+For example, the path for a *scalene triangle* follows the sequence where all sides are distinct and valid.
 
-You are asked to answer some queries about this CFG.
+You’ll use this CFG to answer analysis questions about variable definitions, references, and execution paths.
+
+
 
 # Testing & Analysis
 
-You will need to create three test suites and place the files in test_suit folder. The goal is to interpret code coverage and mutation analysis results. The test suites are as follows:
+You will create **two test suites** inside the `test_suit/` folder and use the provided shell scripts for code coverage analysis.
 
 ## Statement Coverage
 
-1. You need to create a test suite namely ```test_statementCoverage.py```
-2. Run the following script to generate line coverage report: ```./statement_coverage.sh```
-3. The statement coverage should be approximately **95%** and above. 
+**Goal:** Achieve ≥ 95 % statement (line) coverage.
+
+* Create: `test_statementCoverage.py`
+* Run:
+
+  ```bash
+  ./statement_coverage.sh
+  ```
+* The report will be generated in:
+  `test_suit/statement_html/index.html`
 
 
 ## Decision Coverage
 
-1. You need to create a test suite namely ```test_decisionCoverage.py```
-2. Run the following script to generate branch coverage report: ```./decision_coverage.sh```
-3. The decision coverage should be approximately **95%** and above. 
+**Goal:** Achieve ≥ 95 % branch (decision) coverage.
+
+* Create: `test_decisionCoverage.py`
+* Run:
+
+  ```bash
+  ./decision_coverage.sh
+  ```
+* The report will be generated in:
+  `test_suit/decision_html/index.html`
+
+
 
 ### Coverage Tool
 
@@ -53,10 +69,41 @@ coverage and condition coverage.
 - Run the Coverage code analysis scripts (statement_coverage.sh),
   (decision_coverage.sh) and inspect the report it produces. 
 - You will find the ```index.html``` inside the generated folders ```statement_html``` and ```decision_html``` respectively in ```'./test_suit``` directory. 
-- USEFUL RESOURCES: To get more idea on how to read a Coverage report:
-https://coverage.readthedocs.io/en/7.2.7/
+- Useful resources:
 
-## Mutation Testing
+  * [Coverage.py documentation](https://coverage.readthedocs.io/en/7.2.7/)
+  * [pytest](https://pypi.org/project/pytest/)
+  * [unittest](https://docs.python.org/3/library/unittest.html)
+
+##  Mutation Testing (Part 3)
+
+Mutation testing assesses whether your test suite can “kill” code mutants—small program changes that simulate common errors.
+
+###  Provided Mutants
+
+Two mutant versions of the triangle program are included for your analysis:
+
+* [`mutation1.zip`](./mutant1.zip)
+* [`mutation2.zip`](./mutant2.zip)
+
+Each zip file contains a modified version of `isTriangle.py`.
+
+###  Your Tasks
+
+1. **Compare** each mutant to the original program:
+
+   * Identify what code was changed.
+   * Determine whether the mutant is *detectable* or *undetectable*.
+
+2. **Explain**:
+
+   * Why the mutant behaves differently or identically.
+   * Common reasons some mutants remain undetectable.
+
+*(Mutation analysis tools and detailed evaluation are optional for this exercise, but you should manually reason about detectability.)*
+
+
+<!-- ## Mutation Testing
 1. You need to create a test suite namely ```test_mutationAdequate.py ```
 2. When you run the command './mutation.sh', you will find a log file ```mutation_output.log``` generated in the directory ```./test_suit```. Check the log file for generated mutants or error messages. 
 3. The mutant detection ratio should be approximately **75%** and above. 
@@ -88,4 +135,26 @@ If you are interested to generate the control flow graph we have used in this ex
 Link to the Graphviz download: https://graphviz.org/download/
 3. If you have installed it, then the default command is:
 ```py2cfg isTriangle.py```. You should find a generated SVG file in the same directory.
-4. In a web brower, open the generated SVG file to visualize the CFG.
+4. In a web brower, open the generated SVG file to visualize the CFG. -->
+
+
+## Submission Instructions
+
+**Due:** Tuesday, **October 21 @ 11:59 PM** (via Gradescope)
+This is a **group submission** — only one group member needs to submit.
+
+**Your submission archive should be named:**
+`<groupname>-inclass2.zip` (or `.tar.gz`)
+
+It must include:
+
+1. `answers.pdf` or `answers.txt` – Written responses to assignment questions
+2. `test_statementCoverage.py` – Statement coverage test suite (≥ 95 %)
+3. `test_decisionCoverage.py` – Decision coverage test suite (≥ 95 %)
+4. `git-log.txt` – Your project’s commit history (e.g., via `git log > git-log.txt`)
+5. *(Optional)* Any additional notes or reports you wish to include
+
+After submission, **add all group members** in Gradescope using the *Group* functionality.
+
+© 2025 CS520 — Software Testing & Analysis
+Department of Computer Science, University of Massachusetts Amherst
