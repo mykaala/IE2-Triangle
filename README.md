@@ -83,10 +83,10 @@ Mutation testing assesses whether your test suite can “kill” code mutants—
 
 Two mutant versions of the triangle program are included for your analysis:
 
-* [`mutation1.zip`](./mutant1.zip)
-* [`mutation2.zip`](./mutant2.zip)
+* [`mutant 1`](./mutants/mutant1/isTriangle.py)
+* [`mutant 2`](./mutants/mutant2/isTriangle.py)
 
-Each zip file contains a modified version of `isTriangle.py`.
+Each mutants subfolder contains a modified version of `isTriangle.py`.
 
 ###  Your Tasks
 
