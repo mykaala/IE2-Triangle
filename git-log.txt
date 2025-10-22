@@ -1,0 +1,21 @@
+git log
+commit 09627d722da3401496cff6ebefeb07ad9f9bd811 (HEAD -> main, origin/main, origin/HEAD)
+Author: Mykaala Firdaus <mykal.kd@gmail.com>
+Date:   Tue Oct 21 14:30:44 2025 -0400
+
+    Add decision and statement coverage tests for Triangle
+    
+    test_decisionCoverage.py and test_statementCoverage.py to improve test coverage for the Triangle classifier. These tests cover various triangle types and invalid cases, ensuring correctness of classification logic.
+
+commit 35c3c5dbbf9a563778bdc03bc7ecd4de8ed34cf6
+Author: Mykaala Firdaus <mykal.kd@gmail.com>
+Date:   Tue Oct 21 13:33:47 2025 -0400
+
+    Add test suite and update script permissions
+    
+    Added test files and coverage data to the test_suit directory. Changed statement_coverage.sh to be executable. This sets up the initial structure for statement and decision coverage testing.
+
+commit 7d661e18c2da3f75baca002921723ccd06099951 (upstream/main, upstream/HEAD)
+Author: Heather Conboy <hconboy@cs.umass.edu>
+Date:   Wed Oct 15 20:14:58 2025 -0400
+:
